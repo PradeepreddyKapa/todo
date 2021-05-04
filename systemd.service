@@ -2,9 +2,9 @@
 Description = todo Service
 [Service]
 Environment=ZIPKIN_URL=http://172.31.27.189:9411/api/v2/spans
-Environment=REDIS_HOST=
+Environment=REDIS_HOST=172.31.26.157
 Environment=TODO_API_PORT=8080
-ExecStart=/bin/node /root/todo/server.js
+ExecStart=/bin/node /root/todo-auto/todo/server.js
 SyslogIdentifier=login
 
 [Install]
