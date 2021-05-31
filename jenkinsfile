@@ -2,12 +2,21 @@ pipeline {
     agent any 
     
     stages {
+        stage ('Build code'){
 
+            steps {
+                sh '''
+                  mvn clean package
+                '''
+
+            }
+        }
         stage ('Prepare Artifacts'){
 
             steps {
                 sh '''
-                zip -r user.zip
+                cp target/*.jar user.jar
+                zip -r user.zip user.jar
                 '''
 
             }
