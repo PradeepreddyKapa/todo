@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage ('Code Build'){
+
+           steps {
+                sh '''
+                 npm install
+                 '''
+           }
+        }
+
+        stage ('Prepare Artifacts'){
+
+            steps {
+                sh '''
+                zip -r todo.zip node_modules server.js
+                '''
+
+            }
+        }
+
+        stage('Upload Artifacts'){
+
+            steps {
+                sh'''
+                  curl -v -u admin:admin --upload-file todo.zip http://172.31.12.138:8081/repository/todo/todo.zip
+                '''
+            }
+        }
+    }
+}
