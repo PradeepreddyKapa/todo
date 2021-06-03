@@ -4,6 +4,6 @@ todo(
     COMPONENT         : 'todo',
     SLAVE_LABEL       :  "todo",
     PROJECT_NAME      :  "TODO",
-    APP_TYPE          :  "NPM",
+    APP_TYPE          :  "NODEJS",
     SKIP_NEXUS_UPLOAD :   false,
 )
