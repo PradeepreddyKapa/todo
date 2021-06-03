@@ -1,3 +1,14 @@
+@Library('todo_auto') _
+
+todo(
+    COMPONENT         : 'todo',
+    SLAVE_LABEL       :  "todo",
+    PROJECT_NAME      :  "TODO",
+    APP_TYPE          :  "NPM",
+    SKIP_NEXUS_UPLOAD :   false,
+)
+
+
 pipeline {
     agent any
 
